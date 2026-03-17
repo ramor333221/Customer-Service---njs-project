@@ -1,0 +1,200 @@
+body {
+    background-image: url("/public/img/background.png"); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Arranges children in a column */
+    justify-content: flex-end; /* Aligns children to the bottom */
+    align-items: center; /* Centers children horizontally */
+}
+
+
+#loginBox {
+    width: 400px; /* Set a fixed width for the box */
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+    border-radius: 10px; /* Rounded corners for the box */
+}
+
+
+#loginForm {
+    display: flex; /* Enables flexbox for the form */
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+}
+
+.logout-button {
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    left: 2%; /* Distance from the left edge */
+    top: 3%; /* Distance from the top edge */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    z-index: 1000;
+    background-color: #faba78;
+    border-radius: 15px;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: #faba78;
+}
+
+input {
+    margin: 5px; /* Adds space between inputs */
+    padding: 8px; /* Adds padding inside inputs */
+    width: 95%; /* Takes full width of the login box */
+    font-size: 14px; /* Sets font size for inputs */
+    border: 1px solid #faba78; /* Adds a border */
+    border-radius: 4px; /* Rounds the corners */
+    background-color: white !important;
+}
+
+input:hover {
+    border-color: #faba78; /* Changes border color on hover */
+}
+
+button {
+    background-color:white; /* Default background color */
+    color:#faba78; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, border-radius 0.3s; /* Smooth transition */
+    margin:7px;
+}
+
+button:hover {
+    background-color: #faba78; /* Background color on hover */
+    border-radius: 15px; /* Change border radius on hover */
+    color:white;
+}
+
+
+.button-container {
+    display: flex; /* Enables flexbox for buttons */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    margin-top: 10%; /* Adjusts margin as needed */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    overflow: hidden; /* Hides overflow if items exceed container width */
+}
+
+.register-container {
+    display: flex; /* Enables flexbox for buttons */
+    justify-content: left; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    margin-top: 40%; /* Adjusts margin as needed */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    overflow: hidden; /* Hides overflow if items exceed container width */
+}
+
+.register-container span,
+.register-container a {
+    font-size: 18px; /* Sets font size for both span and link */
+    color: #eec9a3; /* Sets text color to white */
+    margin-left: 5px; /* Adds space between span and link */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.register-container a {
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.register-container a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+.password-container {
+    position: relative;
+    width: 100%; /* Ensures it takes the full width of the parent */
+}
+
+
+
+.eye-icon {
+    position: absolute;
+    left: 90%; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+form {
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+    margin-top: 20px; /* Adjust margin top as needed */
+    border: 2px solid pink; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgba(132, 179, 45, 0.65); /* Optional: background color for better visibility */
+    margin-bottom: 12%;
+    justify-content: center;
+    width:30%;
+}
+
+h1 {
+    font-size: 24px; /* Sets the font size for the title */
+    color: rgb(247, 150, 166); /* Sets the text color to pink */
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    font-weight: 600;
+}
+
+#phone{
+    margin-top:6%;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8.5px 18px; /* Increased padding for height */
+    background-color:white; /* Background color for the button */
+    color:#faba78; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 15px; /* Increased font size for better visibility */
+    text-align: center; /* Centers text */
+    margin-bottom: 1px; /* Space below the upload button */
+}
+
+
+.custom-file-upload:hover {
+    background-color: #faba78; /* Background color on hover */
+    border-radius: 15px; /* Change border radius on hover */
+    color:white;
+}
+
+.upload-message {
+    margin-top: 10px; /* Space above the message */
+    font-size: 14px; /* Font size for the message */
+    color: #333; /* Text color for the message */
+}
+
+#button2 {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Centers children horizontally */
+    justify-content: center; /* Centers children vertically */
+}
+
+@media (max-width: 1300px) { /* Tablets */
+    form {
+        width:50%;
+        margin-bottom: 25%;
+    }
+}
+
+@media (max-width: 580px) { /* iPhones */
+    form {
+        width:50%;
+        margin-bottom: 40%;
+    }
+    .custom-file-upload {
+        padding: 4.3%;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+<form id="registrationForm">
+    <h1>sign up to Service</h1>
+    <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+    <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Password" required>
+        <span id="togglePassword" class="eye-icon">👁️</span>
+    </div>
+    <input type="text" id="phone" name="phone" placeholder="Phone" required><br><br>
+    <div id="button2">
+    <div class="custom-file-upload" id="uploadButton" onclick="document.getElementById('picture').click();">
+        Choose Picture <span id="icon" class="icon"></span>
+    </div>
+    <input type="file" id="picture" accept="image/*" style="display: none;">
+    <span id="message" class="upload-message"></span>
+    <button type="submit">next</button>
+    </div>
+</form>
+<button class="logout-button" id="logout">Logout</button>
+<script type="module" src="../js/register.js" defer></script>
+</body>
+</html>
+

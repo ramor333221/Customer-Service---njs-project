@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/url">
+</head>
+<body>
+<div id="loginBox" >
+    <div class="register-container">
+        <img src="public/img/logoMain.png" id="logoM">
+        <span>   Don't have an account? </span>
+        <a href="/src/html/register.html" id="registerLink">Sign Up</a>
+    </div>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Password" required>
+            <span id="togglePassword" class="eye-icon">👁️</span>
+        </div>
+        <div class="button-container">
+            <button type="submit">Login</button>
+            <button type="button" id="anonymousLogin">Anonymous</button>
+        </div>
+    </form>
+    <div id="response"></div>
+</div>
+<button class="logout-button" id="logout">Logout</button>
+<img src="public/img/fullLogo.png" id="fullL">
+<script type="module" src="./src/main.js" defer></script>
+</body>
+</html>

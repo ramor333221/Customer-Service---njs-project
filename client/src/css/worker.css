@@ -1,0 +1,586 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+
+th {
+    background-color: #f2f2f2;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(250, 215, 207);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    border-radius: 10px;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+
+.logout-button {
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    right: 2%; /* Distance from the left edge */
+    top: 3%; /* Distance from the top edge */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    z-index: 1000;
+    background-color: #faba78;
+    border-radius: 15px;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: #faba78;
+}
+
+.waiting-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.waiting-message img {
+    width: 30%; /* Adjust size as needed */
+    height: 37%; /* Adjust size as needed */
+    margin-top: 10px;
+}
+
+body {
+    position: relative; /* Required for the pseudo-element to position correctly */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Arranges children in a column */
+    justify-content: flex-end; /* Aligns children to the bottom */
+    align-items: center; /* Centers children horizontally */
+}
+
+body::before {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positions it relative to the body */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    right: 0; /* Aligns to the right */
+    bottom: 0; /* Aligns to the bottom */
+    background-image: url("/public/img/background.png"); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    opacity: 0.5; /* Adjust the opacity to make the image transparent */
+    z-index: -1; /* Places the overlay behind other content */
+}
+
+
+
+#loginBox {
+    width: 400px; /* Set a fixed width for the box */
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+    border-radius: 10px; /* Rounded corners for the box */
+}
+
+#loginForm {
+    display: flex; /* Enables flexbox for the form */
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+}
+
+input {
+    margin: 5px; /* Adds space between inputs */
+    padding: 8px; /* Adds padding inside inputs */
+    width: 95%; /* Takes full width of the login box */
+    font-size: 14px; /* Sets font size for inputs */
+    border: 1px solid  rgb(250, 215, 207);; /* Adds a border */
+    border-radius: 4px; /* Rounds the corners */
+    background-color: white !important;
+}
+
+input:hover {
+    border-color:  rgb(250, 215, 207);; /* Changes border color on hover */
+}
+
+button {
+    background-color: white; /* Default background color */
+    color:  rgb(250, 215, 207);; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, border-radius 0.3s; /* Smooth transition */
+    margin: 7px;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.6);/* Background color on hover */
+    border-radius: 15px; /* Change border radius on hover */
+    color: #84b32d;;
+}
+
+
+.button-container {
+    display: flex; /* Enables flexbox for buttons */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    margin-top: 10%; /* Adjusts margin as needed */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    overflow: hidden; /* Hides overflow if items exceed container width */
+}
+
+.register-container {
+    display: flex; /* Enables flexbox for buttons */
+    justify-content: left; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    margin-top: 40%; /* Adjusts margin as needed */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    overflow: hidden; /* Hides overflow if items exceed container width */
+}
+
+.register-container span,
+.register-container a {
+    font-size: 18px; /* Sets font size for both span and link */
+    color: #eec9a3; /* Sets text color to white */
+    margin-left: 5px; /* Adds space between span and link */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.register-container a {
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.register-container a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+.password-container {
+    position: relative;
+    width: 100%; /* Ensures it takes the full width of the parent */
+  }
+  
+  
+  
+  .eye-icon {
+    position: absolute;
+    left: 80%; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+form {
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+    margin-top: 20px; /* Adjust margin top as needed */
+    border: 2px solid  rgb(250, 215, 207);; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: #84b32d; /* Optional: background color for better visibility */
+    margin-bottom: 12%;
+    justify-content: center;
+    width: 30%;
+}
+
+h1 {
+    font-size: 24px; /* Sets the font size for the title */
+    color:  rgb(250, 215, 207);; /* Sets the text color to pink */
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-family: Arial, sans-serif; /* Sets the font family */
+}
+
+#phone {
+    margin-top: 6%;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 18px; /* Increased padding for height */
+    background-color: #f0f0f0; /* Background color for the button */
+    color: #333; /* Text color */
+    border: 2px solid  rgb(250, 215, 207);; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 15px; /* Increased font size for better visibility */
+    text-align: center; /* Centers text */
+    margin-bottom: 1px; /* Space below the upload button */
+}
+
+
+.custom-file-upload:hover {
+    background-color:  rgb(250, 215, 207);; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.upload-message {
+    margin-top: 10px; /* Space above the message */
+    font-size: 14px; /* Font size for the message */
+    color: #333; /* Text color for the message */
+}
+
+#button2 {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Centers children horizontally */
+    justify-content: center; /* Centers children vertically */
+}
+
+#myUploadedImage {
+    width: 3% !important; /* Width of the image */
+    height: 6% !important; /* Height of the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    position: absolute; /* Allows positioning on the left side */
+    left: 2%; /* Distance from the left edge */
+    top: 3%; /* Distance from the top edge */
+    z-index: 1001;
+}
+
+
+#menu {
+    align-items: center; /* Centers inputs and button horizontally */
+    border: 2px solid  rgb(250, 215, 207);; /* Green border */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgb(162 189 48); /* Background color */
+    justify-content: center;
+    width: 100%; /* Increased width for a longer menu */
+    height: 6%; /* Increased height for a longer menu */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    top: 1%; /* Space from the top */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+#gifContainer {
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+    margin-top: 20%; /* Adjust margin top as needed */
+    border: 2px solid #fad7cf; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgba(132, 179, 45, 0.75); /* Optional: background color for better visibility */
+    margin-bottom: 5%;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+}
+
+#gifContainer #gif, #topicInputDiv #gif{
+    width: 10% !important; /* Width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    box-shadow: 0 4px 8px #fad7cf; /* Adds shadow */
+    margin-bottom: 10px; /* Optional: space between the GIF and the heading */
+}
+
+
+h1 {
+    font-size: 24px; /* Sets the font size for the title */
+    color: #fad7cf; /* Sets the text color to pink */
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 8%; /* Adds space below the title */
+    font-family: Arial, sans-serif; /* Sets the font family */
+}
+
+h2 {
+    background-color: white; /* Background color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 1%; /* Padding inside the h2 */
+    color: #fad7cf; /* Text color */
+    text-align: center; /* Center the text */
+}
+
+h4 {
+    background-color: rgb(250, 215, 207) ; /* Background color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 1%; /* Padding inside the h2 */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 24px; /* Sets the font size for the title */
+    color: rgba(132, 179, 45,1); /* Sets the text color to pink */
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    background-color: rgba(132, 179, 45,0.25);
+    border-radius: 15px;
+    padding: 1%;
+}
+
+#logo{
+    width: 30%; /* Adjust size as needed */
+    height: 10%; /* Adjust size as needed */
+    margin-top: 10px;
+}
+
+
+.toggle-password {
+    position: absolute;
+    left: 93%; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+/* General styles for the conversation area */
+#conversations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove margin */
+    position: absolute;
+    z-index: 1003;
+}
+
+
+.chat-window {
+    width: 80vh; /* Set width for chat window */
+    height: 80vh; /* Fixed height of 90% of the viewport */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 5px;
+    margin:90px 0 0 0;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+/* Styles for the chat header */
+.chat-header {
+    padding: 10px;
+    background-color: rgb(250, 215, 207); /* Background color */
+    color: rgba(132, 179, 45,1); /* White text */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.buttunC{
+    background-color: white; /* Default background color */
+    color:  #84b32d; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, border-radius 0.3s; /* Smooth transition */
+    margin: 7px;
+}
+
+.buttunC:hover {
+    background: rgba(255, 255, 255, 0.6);/* Background color on hover */
+    border-radius: 15px; /* Change border radius on hover */
+    color: #84b32d;;
+}
+
+
+/* Styles for individual message */
+.chat-messages div {
+    margin-bottom: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.chat-messages {
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Scroll if overflow */
+    padding: 10px;
+}
+.chat-message {
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Scroll if overflow */
+    padding: 10px;
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    margin: 10px 0; /* Space between messages */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f1f1f1; /* Light background color */
+    max-width: 80%;
+    width: fit-content; /* Set width to fit content */
+    flex-grow: 0;
+    overflow-y: auto;
+}
+
+
+.chat-message.user-message div {
+    display: flex;
+    flex-direction: column; /* Stack text and timestamp vertically */
+}
+.chat-message.user-message {
+    background-color: rgba(132, 179, 45, 0.5);/* Pink background for user's messages */
+    margin-left: auto; /* Align to the right */
+    display: flex; /* Ensure flex display for layout */
+    flex-direction: row-reverse; /* Reverse the order of flex items */
+    justify-content: space-between;
+}
+
+.chat-message.user-message img {
+    margin-left: 10px; /* Space between text and image */
+}
+
+.chat-message img {
+    width: 40px; /* Avatar size */
+    height: 40px; /* Avatar size */
+    border-radius: 50%; /* Circular avatar */
+    margin-right: 10px; /* Space between avatar and text */
+}
+
+.chat-message p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for the message */
+    color: #333; /* Text color */
+}
+
+.chat-message .timestamp {
+    font-size: 12px; /* Smaller font size for timestamp */
+    color: #888; /* Grey color for timestamp */
+    margin-top: 5px; /* Space above the timestamp */
+}
+
+/* Styles for chat input area */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ced4da; /* Border */
+    margin-top: auto;
+}
+
+.chat-input input {
+    flex: 1; /* Take remaining space */
+    padding: 10px;
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background-color: rgb(250, 215, 207);
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: rgba(132, 179, 45, 0.85); /* Slightly darker on hover */
+}
+
+
+
+/* Styles for the topic input div */
+#topicInputDiv {
+    position: absolute;
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+    margin-top: 20%; /* Adjust margin top as needed */
+    border: 2px solid  rgb(250, 215, 207);; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 50px; /* Adds padding inside the form */
+    background-color: rgba(132, 179, 45,1); /* Optional: background color for better visibility */
+    margin-bottom: 5%;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+}
+
+@media (max-width: 1600px) { /* Tablets */
+    #myUploadedImage{
+     width:4% !important;
+    }
+   }
+
+@media (max-width: 1020px) { /* Tablets */
+   #myUploadedImage{
+    width:6% !important;
+   }
+  }
+
+  @media (max-width: 820px) { /* Tablets */
+    .chat-window {
+        width: 70vh;
+   }
+}
+  
+  @media (max-width: 680px) { /* iPhones */
+    .chat-window {
+        width: 50vh;
+   }
+    #menu{
+        flex-direction: column;
+    }
+    button{
+        padding: 7px 15px;
+    }
+    #myUploadedImage{
+        width:12% !important;
+       }
+  }
+
+  @media (max-width: 650px) { 
+    #myUploadedImage{
+        width:10% !important;
+        height: 3% !important;
+       }
+       button{
+        padding: 3px 10px;
+    }
+  }
+
+  @media (max-width: 500px) { 
+    .chat-window {
+        width: 30vh;
+   }
+  }
+ 
+  

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Example</title>
+    <link rel="stylesheet" href="../css/customer.css">
+</head>
+<body>
+<div id="menu">
+    <button id="updateForm">update Form</button>
+    <button id="newConversation">Create New Conversation</button>
+    <button id="viewConversation">view my Conversation</button>
+</div>
+<div id="gifContainer">
+    <img id="gif" src="/public/img/helpdesk.gif" alt="Loading..." />
+    <h1>Hi, I'm Sivi</h1>
+    <h2>I'm your personal assistant,</h2>
+    <h2>Tell me about your problem</h2>
+    <h2>and you will receive fast and</h2>
+    <h2>professional service especially for you 💗</h2>
+</div>
+<div id="topicInputDiv" style="display:none;">
+    <img id="gif2" src="/public/img/helpdesk.gif" alt="Loading..." />
+    <h4>Hi, that is Sivi here</h4>
+    <h2>how can I help you today?</h2>
+    <h2>please, choose topic for service:</h2>
+    <select id="topicSelect">
+        <option value="Complaint">Complaint</option>
+        <option value="Request for help">Request for help</option>
+        <option value="Other">Other</option>
+    </select>
+    <button id="submitTopic">Submit</button>
+</div>
+
+<div id="queueResponse"></div>
+<div id="conversations"></div>
+
+<div id="container" class="container" display="none">
+</div>
+<button class="logout-button" id="logout">Logout</button>
+<div id="users"></div>
+
+<h3 id="message"></h3>
+
+<script type="module" src="../js/customer.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+body {
+    position: relative; /* Required for the pseudo-element to position correctly */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Arranges children in a column */
+    justify-content: flex-end; /* Aligns children to the bottom */
+    align-items: center; /* Centers children horizontally */
+    height: 100vh;
+    overflow: hidden; /* Prevents body scroll */
+}
+
+
+body::before {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Positions it relative to the body */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    right: 0; /* Aligns to the right */
+    bottom: 0; /* Aligns to the bottom */
+    background-image: url("/public/img/background.png"); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    opacity: 0.5; /* Adjust the opacity to make the image transparent */
+    z-index: -1; /* Places the overlay behind other content */
+
+}
+
+#menu {
+    align-items: center; /* Centers inputs and button horizontally */
+    border: 2px solid rgb(250, 215, 207);; /* Green border */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgb(162 189 48); /* Background color */
+    justify-content: center;
+    width: 100%; /* Increased width for a longer menu */
+    height: 6%; /* Increased height for a longer menu */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    top: 1%; /* Space from the top */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+
+
+
+#myUploadedImage {
+    width: 3% !important; /* Width of the image */
+    height: 6% !important; /* Height of the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    left: 2%; /* Distance from the left edge */
+    top: 3%; /* Distance from the top edge */
+    /* Distance from the top edge */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    z-index: 1000;
+}
+
+form {
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Arranges inputs and button in a column */
+    align-items: center; /* Centers inputs and button horizontally */
+    border: 2px solid rgb(250, 215, 207); /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgba(132, 179, 45, 0.65);
+    margin-bottom: 5%; /* Adds margin at the bottom */
+    justify-content: center; /* Centers content vertically */
+    width: 30%; /* Width of the form */
+}
+
+#users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.user {
+    background-color: #ffffff; /* White background for user cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    width: 200px; /* Fixed width for user cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 0 0 200px; /* Set basis size to fixed width */
+}
+
+.password-container {
+    position: relative;
+    width: 100%; /* Ensures it takes the full width of the parent */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    left: 93%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+  
+  .eye-icon {
+    position: absolute;
+    left: 80%; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    right: -4.5%;
+  }
+
+
+h1 {
+    font-size: 24px; /* Sets the font size for the title */
+    color: rgb(250, 215, 207); /* Sets the text color to pink */
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    border-radius: 15px; /* Rounded corners */
+    padding: 1%; /* Padding for the title */
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 95%; /* Sets input fields width */
+    padding: 10px; /* Padding inside input fields */
+    margin: 10px 0; /* Space between input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+
+
+.user:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+.user img {
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.user h3 {
+    font-size: 1.2em; /* Slightly larger font for names */
+    margin: 0; /* Remove default margin */
+}
+
+.user p {
+    font-size: 0.9em; /* Smaller font for other details */
+    color: #666; /* Gray color for text */
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+h3 {
+    margin: 0; /* Removes default margin */
+    font-size: 24px; /* Larger font size for the user name */
+    color: #333; /* Darker color for better readability */
+}
+
+p {
+    margin: 5px 0; /* Standardizes margin for paragraph tags */
+    font-size: 16px; /* Larger font size for user details */
+    color: #666; /* Darker color for text */
+}
+
+.logout-button {
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    right: 2%; /* Distance from the left edge */
+    top: 3%; /* Distance from the top edge */
+    display: flex; /* Flexbox layout */
+    position: fixed; /* Fixes the position */
+    z-index: 1000;
+    background-color: #faba78;
+    border-radius: 15px;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: #faba78;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Full width */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#conversationsTable {
+    width: 80%;
+    margin-top: 10%; /* Add space of 10% from the top */
+    max-height: 100vh; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-bottom: 20px;
+    /* background-color: rgba(132, 179, 45, 0.65); */
+}
+#conversationsTable {
+    width: 50%;
+    margin: 10% auto; /* Center the table horizontally with top margin */
+    max-height: 70vh; /* Set a max height for scrolling (adjust as necessary) */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: block; /* Ensure block display for overflow to work */
+    /* border-collapse: collapse; Optional: for better table styling */
+}
+#workersTable{
+
+    width: 100%;
+    margin-top: 10%; /* Add space of 10% from the top */
+    max-height: 100vh; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+    margin-bottom: 20px;
+    /* background-color: rgba(132, 179, 45, 0.65); */
+}
+#workersTable {
+    margin: 10% auto; /* Center the table horizontally with top margin */
+    max-height: 70vh; /* Set a max height for scrolling (adjust as necessary) */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: block; /* Ensure block display for overflow to work */
+    /* border-collapse: collapse; Optional: for better table styling */
+} 
+
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(132, 179, 45, 0.65);;
+    color: white;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center filters */
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(132, 179, 45, 0.65);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+button {
+    background-color: white;
+    color: #faba78;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-radius 0.3s;
+    margin: 7px;
+}
+
+button:hover {
+    background-color: #faba78;
+    border-radius: 15px;
+    color: white;
+}
+
+
+.input {
+    margin: 5px;
+    padding: 10px;
+    width: 200px; /* Set a fixed width for inputs */
+}
+
+#buttunM{
+    display:flex;
+    margin-bottom: 1%;
+}
+
+
+.chat-window {
+    width: 80vh; /* Set width for chat window */
+    height: 50vh; /* Fixed height of 80% of the viewport */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 5px;
+    margin: 90px 0 0 0;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: rgb(250, 215, 207); /* Background color */
+    color: rgba(132, 179, 45, 1); /* Header text color */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-messages {
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Scroll if overflow */
+    padding: 10px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    max-width: 80%; /* Limit width */
+}
+
+.chat-message.customer {
+    background-color: rgba(132, 179, 45, 0.5); /* Color for customer messages */
+    margin-left: auto; /* Align to the right */
+}
+
+.chat-message.worker {
+    background-color: #f1f1f1; /* Color for worker messages */
+}
+
+.chat-message img {
+    width: 40px; /* Avatar size */
+    height: 40px; /* Avatar size */
+    border-radius: 50%; /* Circular avatar */
+    margin-right: 10px; /* Space between avatar and text */
+}
+
+.chat-message p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for the message */
+    color: #333; /* Text color */
+}
+
+.chat-message .timestamp {
+    font-size: 12px; /* Smaller font size for timestamp */
+    color: #888; /* Grey color for timestamp */
+    margin-top: 5px; /* Space above the timestamp */
+}
+
+#profilePicture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@media (max-width: 1600px) { /* Tablets */
+    #myUploadedImage{
+     width:4% !important;
+    }
+   }
+
+@media (max-width: 1020px) { /* Tablets */
+   #myUploadedImage{
+    width:6% !important;
+   }
+   #topicInputDiv #gif2,#gifContainer #gif{
+    width: 15% !important; 
+   }
+  }
+@media(max-width:950px)
+{
+    #menu{
+        flex-direction: column;
+        height:15%;
+    }
+    button{
+        padding: 3px 10px;
+    }
+}
+  @media (max-width: 820px) { /* Tablets */
+    .waiting-message{
+        width: 400px;
+    }
+    .waiting-message img{
+        width:50%
+    }
+    .chat-window {
+        width: 70vh;
+   }
+   #topicInputDiv #gif2, #gifContainer #gif{
+    width: 32% !important; 
+   }
+   #workersTable{
+    width:50%;
+   }
+}
+  
+  @media (max-width: 680px) { /* iPhones */
+    .chat-window {
+        width: 50vh;
+   }
+    #myUploadedImage{
+        width:12% !important;
+       }
+       #topicInputDiv #gif2, #gifContainer #gif{
+        width: 25% !important; 
+       }
+  }
+
+  @media (max-width: 650px) { 
+    #myUploadedImage{
+        width:10% !important;
+        height: 3% !important;
+       }
+       
+  }
+
+  @media (max-width: 500px) { 
+    .chat-window {
+        width: 30vh;
+   }
+   #topicInputDiv #gif2, #gifContainer #gif{
+    width: 30% !important; 
+   }
+   #gifContainer{
+    width:60%;
+   }
+   .waiting-message{
+    width: 200px;
+}
+.waiting-message img{
+    width:90%
+}
+  }
+
+
+
